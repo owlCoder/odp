@@ -15,10 +15,12 @@ export default function KontrolnaTabla({ onLogout }: Props) {
   }
 
   return (
-    <div className="form-container">
+    <div className="form-wrapper">
       <h1>Контролна табла</h1>
-      <p>Пријављени корисник: <strong>{korisnickoIme}</strong></p>
-      <p>Датум и време: {trenutnoVreme}</p>
+      <div className="dashboard-info">
+        <p>Пријављени корисник: <strong>{korisnickoIme}</strong></p>
+        <p>Датум и време: {trenutnoVreme}</p>
+      </div>
       <button onClick={handleLogout}>Напусти контролну таблу</button>
     </div>
   )

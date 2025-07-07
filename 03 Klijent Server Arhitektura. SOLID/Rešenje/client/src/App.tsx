@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { PročitajVrednostPoKljuču } from './helpers/local_storage'
-import KontrolnaTabla from './components/kontrolna_tabla/KontrolnaTabla'
-import AutentifikacionaForma from './components/autentifikacija/AutentifikacionaForma'
 import { authApi } from './api_services/auth/AuthAPIService';
+import AuthStranica from './pages/auth/AuthStranica';
+import KontrolnaTabla from './pages/kontrolna_tabla/KontrolnaTabla';
 
 function App() {
   const [prijavljen, setPrijavljen] = useState<boolean>(false);
@@ -17,7 +17,7 @@ function App() {
   return prijavljen ? (
     <KontrolnaTabla onLogout={() => setPrijavljen(false)} />
   ) : (
-    <AutentifikacionaForma
+    <AuthStranica
       authApi={authApi}
       onLoginSuccess={() => setPrijavljen(true)}
     />

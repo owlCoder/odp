@@ -13,10 +13,11 @@ export const authApi: IAuthAPIService = {
       });
       return res.data;
     } catch (error) {
-      let message = "Greška prilikom prijave.";
+      let message = "Пријава није успешна.";
       if (axios.isAxiosError(error)) {
         message = error.response?.data?.message || message;
       }
+
       return {
         success: false,
         message,
@@ -36,7 +37,7 @@ export const authApi: IAuthAPIService = {
       });
       return res.data;
     } catch (error) {
-      let message = "Greška prilikom registracije.";
+      let message = "Грешка приликом регистрације.";
       if (axios.isAxiosError(error)) {
         message = error.response?.data?.message || message;
       }

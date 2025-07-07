@@ -27,40 +27,40 @@ export default function FormaZaPrijavu({ onLoginSuccess }: Props) {
     if (uspeh) onLoginSuccess()
   }
 
-  return (
-    <div className="form-container">
-      <h1>Пријава</h1>
-      <form onSubmit={podnesiFormu}>
-        <div className="input-group">
-          <label htmlFor="username">Корисничко име:</label>
-          <input
-            id="username"
-            type="text"
-            value={korisnickoIme}
-            onChange={(e) => setKorisnickoIme(e.target.value)}
-            placeholder="Унесите корисничко име"
-            minLength={3}
-            maxLength={20}
-            required
-          />
-        </div>
+ return (
+  <div className="form-wrapper">
+    <h1>Пријава</h1>
+    <form onSubmit={podnesiFormu}>
+      <div className="input-group">
+        <label htmlFor="username">Корисничко име:</label>
+        <input
+          id="username"
+          type="text"
+          value={korisnickoIme}
+          onChange={(e) => setKorisnickoIme(e.target.value)}
+          placeholder="Унесите корисничко име"
+          minLength={3}
+          maxLength={20}
+          required
+        />
+      </div>
 
-        <div className="input-group">
-          <label htmlFor="password">Лозинка:</label>
-          <input
-            id="password"
-            type="password"
-            value={lozinka}
-            onChange={(e) => setLozinka(e.target.value)}
-            placeholder="Унесите лозинку"
-            minLength={3}
-            maxLength={20}
-            required
-          />
-        </div>
+      <div className="input-group">
+        <label htmlFor="password">Лозинка:</label>
+        <input
+          id="password"
+          type="password"
+          value={lozinka}
+          onChange={(e) => setLozinka(e.target.value)}
+          placeholder="Унесите лозинку"
+          minLength={3}
+          maxLength={20}
+          required
+        />
+      </div>
 
-        <button type="submit">Пријава</button>
-      </form>
-    </div>
-  )
+      <button type="submit">Пријава</button>
+    </form>
+  </div>
+);
 }
